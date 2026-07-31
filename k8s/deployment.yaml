@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-app
+  namespace: ns-franck-barry
+  labels:
+    app: frontend-app
+    owner: franck.barry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-app
+  template:
+    metadata:
+      labels:
+        app: frontend-app
+    spec:
+      containers:
+      - name: frontend-app
+        image: ghcr.io/jaims-31/bilan-ecf-front:latest
+        ports:
+        - containerPort: 80
