@@ -45,5 +45,7 @@ jobs:
         kubectl apply -f k8s/ -n ${{ env.NAMESPACE }}
         kubectl rollout restart deployment/frontend-app -n ${{ env.NAMESPACE }}
 
-    - name: Get Ingress details
-      run: kubectl get ingress -n franck-barry
+    - name: Debug Pods and Ingress status
+      run: |
+        kubectl get pods -n ${{ env.NAMESPACE }}
+        kubectl get svc,ingress -n ${{ env.NAMESPACE }}
