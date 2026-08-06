@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-app
-  namespace: ns-franck-barry
+  namespace: franck-barry
   labels:
     app: frontend-app
     owner: franck.barry
